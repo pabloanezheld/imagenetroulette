@@ -21,8 +21,8 @@ export default function App() {
   const [language, setLanguage] = useState(() => localStorage.getItem('vision_lab_lang') || 'en');
   const t = translations[language] || translations.en;
 
-  // Core Persistent State
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('openai_api_key') || import.meta.env.VITE_OPENAI_API_KEY || '');
+  // Core Persistent State (stored safely in each user's browser localStorage)
+  const [apiKey, setApiKey] = useState(() => localStorage.getItem('openai_api_key') || '');
   const [model, setModel] = useState(() => localStorage.getItem('openai_vision_model') || 'gpt-4o-mini');
   const [selectedPreset, setSelectedPreset] = useState('contextual');
   const [audioEnabled, setAudioEnabled] = useState(true);
